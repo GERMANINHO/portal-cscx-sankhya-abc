@@ -1,53 +1,22 @@
 # Portal CS/CX — Sankhya ABC Paulista
 
-Portal web unificado para centralizar clientes, pendências, indicadores, fluxos, documentos e gestão de acessos do time de CS/CX da Sankhya ABC Paulista.
+Portal web unificado com autenticação Supabase, Central de Clientes, documentos privados, fluxos internos e gestão de acessos.
 
-## Arquitetura inicial
+## Etapa 04
 
-- Front-end estático em HTML, CSS e JavaScript.
-- Autenticação, banco e políticas de acesso no Supabase.
-- Documentos internos e evidências em buckets privados do Supabase Storage.
-- Publicação pelo GitHub Pages.
+- Login e perfis conectados ao Supabase.
+- RLS e auditoria ativos.
+- Central de Clientes conectada.
+- 33 documentos registrados no Storage privado.
+- Página de Documentos com pesquisa, filtro, abertura e download protegido.
+- Fluxos abertos internamente no Portal.
+- READMEs atuais renderizados como páginas internas.
+- Rotas por `#`, compatíveis com GitHub Pages.
+
+## Publicação
+
+Substitua no repositório os arquivos e pastas correspondentes por este pacote e ative o GitHub Pages na branch `main`, pasta `/ (root)`.
 
 ## Segurança
 
-Este repositório é público e deve conter somente código e materiais públicos da interface.
-
-Nunca versionar:
-
-- senhas;
-- chaves secretas ou `service_role`;
-- dados reais de clientes;
-- backups;
-- PPTX, PDF, DOCX e XLSX internos;
-- evidências de atendimento.
-
-A chave `publishable` do Supabase pode existir no front-end; o acesso aos dados é controlado por autenticação e Row Level Security.
-
-## Estrutura
-
-```text
-/
-├── index.html
-├── js/
-│   └── config.js
-├── supabase/
-│   └── migrations/
-└── docs/
-```
-
-## Execução local
-
-```bash
-python -m http.server 5500
-```
-
-Acesse `http://localhost:5500`.
-
-## Estado atual
-
-- Login Supabase ativo.
-- Perfil administrador aprovado.
-- Banco inicial criado.
-- Central de Clientes e catálogo de fluxos conectados.
-- Próxima fase: migrar os fluxos antigos para páginas internas e cadastrar documentos no Storage privado.
+O frontend contém apenas a URL e a Publishable Key do Supabase. Nunca publique Secret Key, `service_role`, senha do banco, JWT secret ou dados reais exportados.
